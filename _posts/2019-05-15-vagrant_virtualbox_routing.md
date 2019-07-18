@@ -63,3 +63,21 @@ iptables -t nat -A PREROUTING -i vboxnet1 -s 192.168.50.0/24 -p tcp --dport 80 -
 
 source : 
  * [VirtualBox: Internet Access With Host-Only Network](https://kyrofa.com/posts/virtualbox-internet-access-with-host-only-network)
+
+
+## Promiscuous mode
+
+Le mode promiscuité 
+
+https://www.dsfc.net/infrastructure/virtualisation/les-deux-problemes-de-securite-potentiels-dans-virtualbox/#Le_mode_promiscuite_Promiscuous_Mode
+
+https://cloudbuilder.in/blogs/2015/06/14/virtualbox-networking-settings-for-openstack/
+
+
+Pour activer le mode 
+
+``` Vagrantfile
+server.vm.provider "virtualbox" do |v|
+  v.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
+end
+```
