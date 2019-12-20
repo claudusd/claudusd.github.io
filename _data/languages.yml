@@ -1,0 +1,8 @@
+en:
+  label: English
+  icon: 🇬🇧
+  description: "An Auvergnat Developer/System administrator"
+fr:
+  label: Français
+  icon: 🇫🇷
+  description: "Un Développeur/Administrateur Système Auvergnat"

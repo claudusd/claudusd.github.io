@@ -18,11 +18,9 @@
         </label>
 
         <div class="trigger">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{%t my_page.title %}</a>
-            {%- endif -%}
+          {% assign header_pages = site.html_pages | where: "lang", page.lang | where: "header", "true" | sort: "header_sort", "first" %}
+          {%- for header_page in header_pages  -%}
+              <a class="page-link" href="{{ header_page.url }}">{{ header_page.title }}</a>
           {%- endfor -%}
         </div>
       </nav>
